@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ohl-rm-HQu">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Notes View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="NotesView" id="BYZ-38-t0r" customClass="NotesViewController" customModule="SampleViperNotesApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7an-bT-T7U">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="noteCell" textLabel="J61-C4-yIs" style="IBUITableViewCellStyleDefault" id="SN5-fr-ZqO">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SN5-fr-ZqO" id="YxD-YN-XHd">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J61-C4-yIs">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7an-bT-T7U" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7q5-Ec-0RQ"/>
+                            <constraint firstItem="7an-bT-T7U" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Inh-9K-Ouj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7an-bT-T7U" secondAttribute="trailing" id="LMY-ie-BPK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7an-bT-T7U" secondAttribute="bottom" id="efH-0H-jxf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Hug-nM-n3L">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="bwO-CB-9YA">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="BYZ-38-t0r" id="ahH-Pq-7ac"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="notesTableView" destination="7an-bT-T7U" id="iAp-Rp-m5e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="174" y="117"/>
+        </scene>
+        <!--Note Details View Controller-->
+        <scene sceneID="A35-jj-Cbe">
+            <objects>
+                <viewController storyboardIdentifier="NoteDetailsView" id="bnS-JU-Mn0" customClass="NoteDetailsViewController" customModule="SampleViperNotesApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LjV-8B-yYn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x9i-4D-3A6">
+                                <rect key="frame" x="20" y="94" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bJj-TK-725">
+                                <rect key="frame" x="20" y="178" width="374" height="664"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hCx-7c-b1m" firstAttribute="bottom" secondItem="bJj-TK-725" secondAttribute="bottom" constant="20" id="3Y0-sK-te2"/>
+                            <constraint firstItem="x9i-4D-3A6" firstAttribute="leading" secondItem="hCx-7c-b1m" secondAttribute="leading" constant="20" id="Kdt-6b-xKM"/>
+                            <constraint firstItem="bJj-TK-725" firstAttribute="top" secondItem="x9i-4D-3A6" secondAttribute="bottom" constant="50" id="eLF-o5-0YF"/>
+                            <constraint firstItem="hCx-7c-b1m" firstAttribute="trailing" secondItem="bJj-TK-725" secondAttribute="trailing" constant="20" id="fhc-gs-zSc"/>
+                            <constraint firstItem="hCx-7c-b1m" firstAttribute="trailing" secondItem="x9i-4D-3A6" secondAttribute="trailing" constant="20" id="g2c-Kq-hsd"/>
+                            <constraint firstItem="bJj-TK-725" firstAttribute="leading" secondItem="hCx-7c-b1m" secondAttribute="leading" constant="20" id="quR-Be-20m"/>
+                            <constraint firstItem="x9i-4D-3A6" firstAttribute="top" secondItem="hCx-7c-b1m" secondAttribute="top" constant="50" id="si7-6v-LIi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hCx-7c-b1m"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rWB-AW-oNB"/>
+                    <connections>
+                        <outlet property="contentTextView" destination="bJj-TK-725" id="9QS-eI-OdE"/>
+                        <outlet property="titleTextField" destination="x9i-4D-3A6" id="amb-0i-CYN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nds-rS-Qla" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="926" y="117"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="s1U-8Y-dTw">
+            <objects>
+                <navigationController storyboardIdentifier="NotesNav" id="Ohl-rm-HQu" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qoJ-tv-eA8">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="60Q-Ha-rPl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mj7-Oz-liZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-612" y="117"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="plus" catalog="system" width="64" height="56"/>
+    </resources>
+</document>
